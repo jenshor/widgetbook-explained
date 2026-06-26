@@ -24,7 +24,7 @@ class PrimaryButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.of(context).background.brand,
         borderRadius: BorderRadius.circular(
-          AppTheme.of(context).radius.full,
+          AppTheme.of(context).radius.none,
         ),
       ),
       child: Row(
