@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/ui/ui.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+import 'package:widgetbook/widgetbook.dart';
+
+part 'color.stories.g.dart';
 
 class ColorWidget extends StatelessWidget {
   const ColorWidget({
@@ -84,24 +86,32 @@ class ColorSwatchWidget extends StatelessWidget {
   }
 }
 
-@UseCase(
+/// Showcases the design system's color palette.
+class ColorPalette extends StatelessWidget {
+  const ColorPalette({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        ColorSwatchWidget(name: 'Primary', color: DesignSystemColor.primary),
+        SizedBox(
+          height: 16,
+        ),
+        ColorSwatchWidget(name: 'Brand', color: DesignSystemColor.brand),
+        SizedBox(
+          height: 16,
+        ),
+        ColorSwatchWidget(name: 'Grey', color: DesignSystemColor.grey),
+      ],
+    );
+  }
+}
+
+const meta = Meta(ColorPalette.new);
+
+final $Default = _Story(
   name: 'Default',
-  type: DesignSystemColor,
   designLink:
       'https://www.figma.com/design/HsANkdhbsCNTkXBzNJRNLD/Groceries-Demo?node-id=7340-24552&t=uJW8KKcBrCOkO7C7-4',
-)
-Widget buildDesignSystemColorUseCase(BuildContext context) {
-  return const Column(
-    children: [
-      ColorSwatchWidget(name: 'Primary', color: DesignSystemColor.primary),
-      SizedBox(
-        height: 16,
-      ),
-      ColorSwatchWidget(name: 'Brand', color: DesignSystemColor.brand),
-      SizedBox(
-        height: 16,
-      ),
-      ColorSwatchWidget(name: 'Grey', color: DesignSystemColor.grey),
-    ],
-  );
-}
+);

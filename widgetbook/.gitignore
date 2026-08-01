@@ -1,1 +1,2 @@
-main.directories.g.dart
+*.stories.g.dart
+components.g.dart
